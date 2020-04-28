@@ -11,6 +11,7 @@ public class PorHacerPrograma {
     ArrayDeque<PorHacer> enProcesso;
     Stack<PorHacer> terminado;
 
+    
     Scanner sc;
 
     public PorHacerPrograma(){
