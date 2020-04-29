@@ -32,6 +32,7 @@ public class ClaseB {
                 b.setClaseB(true);
                 b.setContB(+1);
                 Aprobados[i] = queue[i];
+
             }else{
                 b.setClaseB(false);
                 b.setContB(+1);

@@ -1,6 +1,8 @@
 package edu.ujcv.progra1;
 
-public class ClaseC {
+import java.util.Scanner;
+
+public class ClaseE {
     private ArregloDi[] Aprobados;
     private ArregloDi[] queue;
     private ArregloDi[] Listado;
@@ -13,7 +15,7 @@ public class ClaseC {
 
     public ArregloDi[] claseA(){
 
-        ClaseA a = new ClaseA();
+        ClaseD a = new ClaseD();
         ArregloDi b = new ArregloDi();
 
         if(a.getAprobados().length>20){
@@ -23,18 +25,18 @@ public class ClaseC {
         }
 
         for (int i = 0; i < queue.length ; i++) {
-            queue[i] = a.getAprobados(i);
+            queue[i] = a.getAprobadosint(i);
         }
 
         for (int i = 0; i <queue.length ; i++) {
             if (probabilidad()>0.6){
-                b.setClaseB(true);
-                b.setContB(+1);
+                b.setClaseE(true);
+                b.setContE(+1);
                 Aprobados[i] = queue[i];
                 queue[i].removeFirst();
             }else{
-                b.setClaseC(false);
-                b.setContC(+1);
+                b.setClaseE(false);
+                b.setContE(+1);
             }
         }
         return Aprobados;

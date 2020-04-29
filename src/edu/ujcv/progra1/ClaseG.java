@@ -1,9 +1,12 @@
 package edu.ujcv.progra1;
 
-public class ClaseC {
+import java.util.Scanner;
+
+public class ClaseG {
     private ArregloDi[] Aprobados;
     private ArregloDi[] queue;
     private ArregloDi[] Listado;
+    private ArregloDi[] Gaduados;
 
     public double probabilidad(){
         double rad;
@@ -13,7 +16,7 @@ public class ClaseC {
 
     public ArregloDi[] claseA(){
 
-        ClaseA a = new ClaseA();
+        ClaseC a = new ClaseC();
         ArregloDi b = new ArregloDi();
 
         if(a.getAprobados().length>20){
@@ -23,29 +26,36 @@ public class ClaseC {
         }
 
         for (int i = 0; i < queue.length ; i++) {
-            queue[i] = a.getAprobados(i);
+            queue[i] = a.getAprobadosint(i);
         }
 
         for (int i = 0; i <queue.length ; i++) {
-            if (probabilidad()>0.6){
-                b.setClaseB(true);
-                b.setContB(+1);
-                Aprobados[i] = queue[i];
+            Scanner sc = new Scanner(System.in);
+            System.out.println("El estudiante: "+queue[i]+"\nAprueba (si/no)");
+            String resp = sc.next();
+            resp.toUpperCase();
+            if(resp.equals("Si")){
+                Gaduados[i] = queue[i];
                 queue[i].removeFirst();
+                b.setClaseG(true);
+                b.setContG(+1);
             }else{
-                b.setClaseC(false);
                 b.setContC(+1);
             }
         }
-        return Aprobados;
+        return Gaduados;
     }
 
     //Getter
 
-    public ArregloDi[] getAprobados() {
-        return Aprobados;
+    public ArregloDi[] getGaduados() {
+        return Gaduados;
     }
     public ArregloDi getAprobadosint(int i) {
-        return Aprobados[i];
+        return Gaduados[i];
+    }
+
+    public ArregloDi[] getQueue() {
+        return queue;
     }
 }

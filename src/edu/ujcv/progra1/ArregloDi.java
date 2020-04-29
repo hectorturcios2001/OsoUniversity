@@ -67,10 +67,10 @@ public class ArregloDi {
     }
     public ArregloDi(){}
 
-    public ArregloDi(int size){
-        ListaDeAl = new ListaDeAl[size];
-        this.size = 0;
-    }
+//    public ArregloDi(int size){
+//        ListaDeAl = new ListaDeAl[size];
+//        this.size = 0;
+//    }
 
 
     //Setter
@@ -100,6 +100,36 @@ public class ArregloDi {
     }
     public void setContB(int contB) {
         this.contB = contB;
+    }
+    public void setClaseC(boolean claseC) {
+        this.claseC = claseC;
+    }
+    public void setContC(int contC) {
+        this.contC = contC;
+    }
+    public void setClaseD(boolean claseD) {
+        this.claseD = claseD;
+    }
+    public void setContD(int contD) {
+        this.contD = contD;
+    }
+    public void setClaseE(boolean claseE) {
+        this.claseE = claseE;
+    }
+    public void setContE(int contE) {
+        this.contE = contE;
+    }
+    public void setClaseF(boolean claseF) {
+        this.claseF = claseF;
+    }
+    public void setContF(int contF) {
+        this.contF = contF;
+    }
+    public void setClaseG(boolean claseG) {
+        this.claseG = claseG;
+    }
+    public void setContG(int contG) {
+        this.contG = contG;
     }
 
     @Override
