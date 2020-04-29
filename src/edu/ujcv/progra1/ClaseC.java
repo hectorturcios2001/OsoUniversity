@@ -1,7 +1,6 @@
 package edu.ujcv.progra1;
 
-public class ClaseB {
-
+public class ClaseC {
     private ArregloDi[] Aprobados;
     private ArregloDi[] queue;
     private ArregloDi[] Listado;

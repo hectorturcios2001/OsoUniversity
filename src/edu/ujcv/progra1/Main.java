@@ -15,9 +15,8 @@ public class Main {
         switch (x){
             case 1:{}
             case 2:{
-                ArregloDi a = new ArregloDi();
                 for (int i = 0; i < a.getBaseDeDatos().length ; i++) {
-                    a.getBaseDeDatosInt(i);
+                    System.out.println(a.getBaseDeDatosInt(i));
                 }
                 break;
             }

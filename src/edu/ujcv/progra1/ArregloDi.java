@@ -7,7 +7,7 @@ import java.util.List;
 public class ArregloDi {
 
     private int size;
-    private ArregloDi[] ListaDeAl;
+    private ArregloDi[] ListaDeAl = new ArregloDi[21];
     private ArregloDi[] BaseDeDatos;
     private ArregloDi[] AlumosExpulsados;
     boolean claseA = false;boolean claseB = false;boolean claseC = false;boolean claseD = false;boolean claseE = false;boolean claseF = false;boolean claseG = false;
@@ -33,20 +33,30 @@ public class ArregloDi {
         Random rd = new Random();
         Nombres.add("Juancho");
         Nombres.add("Juan");Nombres.add("Pedro");Nombres.add("Kiana");Nombres.add("Hector");Nombres.add("Marie");Nombres.add("Ariel");Nombres.add("Gabriel");Nombres.add("Ana");Nombres.add("Miguel");Nombres.add("Andre");Nombres.add("Carlos");Nombres.add("Andrea");Nombres.add("Eliza");Nombres.add("Jorge");Nombres.add("Benito");Nombres.add("Ramon");Nombres.add("Esteban");Nombres.add("Andres");Nombres.add("Alejandro");
-        Apeliidos.add(" Varela");Apeliidos.add(" Gomez");Apeliidos.add(" Dias");Apeliidos.add(" Castro");Apeliidos.add(" Pelgrim");Apeliidos.add(" Turcios");Apeliidos.add(" Valldares");Apeliidos.add(" Guifarro");Apeliidos.add(" Barrera");Apeliidos.add(" Martiz");Apeliidos.add(" Padilla");Apeliidos.add(" Casco");Apeliidos.add(" Cantor");Apeliidos.add(" Ulloa");Apeliidos.add(" Romero");Apeliidos.add(" Juarez");Apeliidos.add(" Castillo");Apeliidos.add(" Baquedano");Apeliidos.add(" Betancure");Apeliidos.add(" Manzanares");Apeliidos.add(" Holfman");
+        Apeliidos.add(" Varela");Apeliidos.add(" Gomez");Apeliidos.add(" Dias");Apeliidos.add(" Castro");Apeliidos.add(" Pelgrim");Apeliidos.add(" Turcios");Apeliidos.add(" Valldares");Apeliidos.add(" Guifarro");Apeliidos.add(" Barrera");Apeliidos.add(" Martiz");Apeliidos.add(" Padilla");Apeliidos.add(" Casco");Apeliidos.add(" Cantor");Apeliidos.add(" Ulloa");Apeliidos.add(" Romero");Apeliidos.add(" Juarez");Apeliidos.add(" Castillo");Apeliidos.add(" Baquedano");Apeliidos.add(" Betancure");Apeliidos.add(" Manzanares");
         int cont = 1;
         int ano = 2019;
-        int Z = rd.nextInt(20+1);
+        int Z = rd.nextInt(20);
         for (int i = 0; i < Z; i++) {
-            ListaDeAl[i] = new ArregloDi(Nombres.get(rd.nextInt(21))+""+Apeliidos.get(rd.nextInt(21)),cont);
+             Z = rd.nextInt(20);
+            String nom = Nombres.get(Z)+""+Apeliidos.get(Z);
+            ListaDeAl[i] = new ArregloDi(nom,cont);
         }
-        BaseDeDatos = ListaDeAl;
+        for (int i = 0; i < ListaDeAl.length ; i++) {
+            BaseDeDatos[i] = ListaDeAl[i];
+        }
         return ListaDeAl;
     }
-    public static ArregloDi[] remueveElement(ArregloDi[] arrayObjetos, int i) {
-        System.arraycopy(arrayObjetos, i + 1, ArregloDi[],i, arrayObjetos.length - 1 - i);
-        return arrayObjetos;
+    public ArregloDi removeFirst(){
+        ArregloDi temp = ListaDeAl[0];
+
+        for (int i = 1; i < size ; i++) {
+            ListaDeAl[i-1] = ListaDeAl[i];
+        }
+        size--;
+        return temp;
     }
+
 
     //Contructores
     public ArregloDi(String nombre,int numerDecuenta){
@@ -56,6 +66,11 @@ public class ArregloDi {
         this.contA = contA;this.contB = contB;this.contC = contC;this.contD = contD;this.contE = contE;this.contF = contF;this.contG = contG;
     }
     public ArregloDi(){}
+
+    public ArregloDi(int size){
+        ListaDeAl = new ListaDeAl[size];
+        this.size = 0;
+    }
 
 
     //Setter
@@ -79,5 +94,16 @@ public class ArregloDi {
     }
     public ArregloDi[] getBaseDeDatos() {
         return BaseDeDatos;
+    }
+    public void setClaseB(boolean claseB) {
+        this.claseB = claseB;
+    }
+    public void setContB(int contB) {
+        this.contB = contB;
+    }
+
+    @Override
+    public String toString() {
+        return super.toString();
     }
 }
