@@ -5,25 +5,27 @@ import java.util.Stack;
 public class Main {
 
     public static void main(String[] args) {
-	// write your code here
-        Stack<Integer> ejemploStack = new Stack<>();
+        ArregloDi a = new ArregloDi();
+        a.GenerarAlumos();
+        LectorDeTeclado lc = new LectorDeTeclado();
+        String mensaje = "Numero invalido reintente";
+        System.out.println("\n\t\t\tMenu");
+        System.out.println("1) Continuar al proximo\n2) Consultar alumnos\n3) consultar clase\n4) Evaluar ternas\n5) Salir");
+        int x = lc.getInteger(mensaje);
+        switch (x){
+            case 1:{}
+            case 2:{
+                ArregloDi a = new ArregloDi();
+                for (int i = 0; i < a.getBaseDeDatos().length ; i++) {
+                    a.getBaseDeDatosInt(i);
+                }
+                break;
+            }
 
-
-        ejemploStack.push(32);
-        ejemploStack.push(22);
-
-
-        System.out.println("ver pero no tocar!!");
-
-        System.out.println(ejemploStack.peek());
-
-
-        while (!ejemploStack.empty()){
-
-            System.out.println("remover");
-            System.out.println(ejemploStack.pop());
+            case 3:{break;}
+            case 4:{break;}
+            case 5:{break;}
         }
-
 
 
     }
